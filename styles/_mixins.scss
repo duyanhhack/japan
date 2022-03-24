@@ -1,0 +1,38 @@
+@mixin title($fsize: $font-title-big, $display: block) {
+    font-size: $fsize;
+    font-weight: $font-bold;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        display: $display;
+        width: 115px;
+        height: 5px;
+        background: $color-primary;
+    }
+}
+
+@mixin normal-text {
+    font-size: $font-primary;
+    font-weight: $font-light;
+    line-height: $line-height-small;
+}
+@mixin button($width: 300px, $height: 70px, $font: $font-medium, $right: 18px, $icon-size: $font-title-medium) {
+    width: $width;
+    height: $height;
+    display: block;
+    text-align: center;
+    line-height: $height;
+    background: $color-primary;
+    color: white;
+    font-size: $font;
+    position: relative;
+    &::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f105";
+        position: absolute;
+        font-size: $icon-size;
+        right: $right;
+    }
+}
